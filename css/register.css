@@ -1,0 +1,21 @@
+
+body{background: rgb(9, 199, 66);}
+#m2{height:300px;width:500px;margin:50px auto;z-index: 9;}
+#m2 h4{font:600 18px/36px "";color: #000000;}
+#m2 h4 a{font: 14px/36px "";color: #484D4A;margin-left:270px;}
+#m2 input{width:400px;height:40px;margin:15px 0;}
+#m2 p{width:120px;height: 36px;color: red;font: 14px/36px "";}
+
+/* html, body{
+    overflow: hidden;
+    background: #000;
+    padding: 0px;
+    margin: 0px;
+    opacity: 0.6;
+  }
+  
+  #count{
+    position: absolute;
+    top: 0; left: 0;
+    color: #fff;
+  } */

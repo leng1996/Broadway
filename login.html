@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<!-- <link rel="stylesheet" type="text/css" href="css/.css"/> -->
+		
+	</head>
+	<body>
+		<div id="m1">
+			<h4>会员登陆<small><a href="register.html">注册新账号</a></small></h4>
+			<input type="text" id="user" value="" placeholder="用户名/手机号/邮箱" />
+			<p></p><br />
+			<input type="text" id="pass" value="" placeholder="密码" />
+			<p></p><br />
+			<input type="button" name="btn" id="btn" value="登录" /><br />
+			<span></span>
+		</div>
+	</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<script>
+		// console.log(1)
+		let user = document.getElementById("user")
+		let pass = document.getElementById("pass")
+		let btn = document.getElementById("btn")
+
+		user.onblur = function(){
+			// console.log(1)
+			var reg =  /^[\u2E80-\u9FFF\w-]{4,20}$/;
+			if(reg.test(this.value)){
+			}else{
+					this.nextElementSibling.innerHTML = "账号或qq号错误"
+					var that=this;
+					setTimeout(function(){
+						// console.log(1)
+						that.nextElementSibling.innerHTML = ""
+					},1000)
+			// 	// userOnOff = false
+			}
+		  }
+		  
+		  pass.onblur = function(){
+			
+
+				var a = b = c =0;
+
+				var lengthReg = /^.{6,18}$/;
+				if(lengthReg.test(this.value)){
+					this.nextElementSibling.innerHTML = ""
+					// passOnOff = true;
+					
+				}else{
+					this.nextElementSibling.innerHTML = "长度不够"
+					// passOnOff = false;
+					var that=this;
+					setTimeout(function(){
+						// console.log(1)
+						that.nextElementSibling.innerHTML = ""
+					},1000)
+				}
+			}
+
+	</script>
+	<!--<script src="libs/jquery.2.2.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src="module/require.js" type="text/javascript" data-main="module/login-module"></script>
+</html>

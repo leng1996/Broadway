@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+	</head>
+	<body>
+		<!-- <canvas id="canvas"> -->
+			<div id="m2">
+			<h4>注册新账号<small><a href="login.html">登录</a></small></h4>
+			<input type="text" id="user" value="" placeholder="用户名"/>
+			<p></p> <br />
+			<input type="text" id="pass" value="" placeholder="登陆密码"/> <p></p> <br />
+			<input type="text" id="pass2" value="" placeholder="确认密码"/> <p></p> <br />
+			<input type="button" name="btn" id="btn" value="注册" /><br />
+			<span></span>	
+		</div>
+		<!-- </canvas> -->
+<!-- 
+		<div id="count"></div> -->
+
+
+<!-- 
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+
+</div> -->
+
+	</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<script>
+			// console.log(1)
+			let user = document.getElementById("user")
+			let pass = document.getElementById("pass")
+			let pass2 = document.getElementById("pass2")
+			let btn = document.getElementById("btn")
+	
+			user.onblur = function(){
+				var reg =  /^[\u2E80-\u9FFF\w-]{4,20}$/;
+				if(reg.test(this.value)){
+				}else{
+
+						this.nextElementSibling.innerHTML = "账号或qq号错误"
+						var that=this;
+							setTimeout(function(){
+								// console.log(1)
+								that.nextElementSibling.innerHTML = ""
+							},1000)
+				// 	// userOnOff = false
+				}
+			  }
+			  
+			pass.onblur = function(){
+				var a=b=c=0;
+		//			长度验证
+				var lengthReg = /^.{6,18}$/;
+				if(!lengthReg.test(this.value)){
+					this.nextElementSibling.innerHTML = "长度不符";
+					var that=this;
+					setTimeout(function(){
+						// console.log(1)
+						that.nextElementSibling.innerHTML = ""
+					},1000)
+					passOnOff = false
+					return;
+				}
+		//			是否存在数字
+				var numReg = /\d/;
+				if(numReg.test(this.value)){
+					a = 1;
+				}
+		//			是否存在字母
+				var azReg = /[a-zA-Z]/;
+				if(azReg.test(this.value)){
+					b = 1;
+				}
+		//			是否存在特殊字符
+				var tsReg = /[\W_]/;
+				if(tsReg.test(this.value)){
+					c = 1;
+				}
+				
+				switch(a+b+c){
+					case 1:
+						this.nextElementSibling.innerHTML = "简单";break;
+					case 2:
+						this.nextElementSibling.innerHTML = "一般";break;
+					case 3:
+						this.nextElementSibling.innerHTML = "困难";break;
+				}
+	  }
+	  pass2.onblur = function(){
+          if(this.value === pass.value){
+			  this.nextElementSibling.innerHTML = "一致"
+			  var that=this;
+					setTimeout(function(){
+						// console.log(1)
+						that.nextElementSibling.innerHTML = ""
+					},1000)
+            //   pass2OnOff = true
+          }else{
+			  this.nextElementSibling.innerHTML = "不一致"
+			  var that=this;
+					setTimeout(function(){
+						// console.log(1)
+						that.nextElementSibling.innerHTML = ""
+					},1000)
+            //   pass2OnOff = false
+          }
+      }
+	
+		</script>
+	<!--<script src="libs/jquery.2.2.4.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/register.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src='js/dat.gui.min.js'></script>
+	<script src="js/index1.js"></script>
+	<script src="module/require.js" type="text/javascript" data-main="module/register-module"></script>
+	
+</html>
